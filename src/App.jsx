@@ -81,12 +81,11 @@ const Button = ({ button, sortField, reverse, setSortField, setReverse }) => {
         { 'is-warning': button === 'Reverse' },
         { 'is-danger': button === 'Reset' },
         {
-          'is-light':
-            (button === 'Sort alphabetically' && sortField !== 'name') ||
-            (button === 'Sort by length' && sortField !== 'length') ||
-            (button === 'Reverse' && !reverse) ||
-            button === 'Reset',
+          'is-light': button === 'Sort alphabetically' && sortField !== 'name',
         },
+        { 'is-light': button === 'Sort by length' && sortField !== 'length' },
+        { 'is-light': button === 'Reverse' && !reverse },
+        { 'is-light': button === 'Reset' },
       )}
       onClick={() => {
         const value = button;
